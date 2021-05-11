@@ -1,0 +1,20 @@
+<section class="hero-image"> 
+    <h1>Measure Your Gaming Achievements 🏆 </h1>
+</section>
+
+<section>
+    <% if signed_in? %>
+       
+
+    <% else %>
+        <p><%= link_to image_tag("http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_noborder.png"), '/auth/steam' %></p>
+    <% end %>
+
+</section>
+
+
+<section>
+</section>
+
+<footer>
+</footer>

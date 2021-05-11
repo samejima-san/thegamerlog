@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+section{
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section.hero-image{
+    background-image: url("https://wallpapercave.com/wp/wp2276038.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    width: 100vw;
+}
+
+
+section.hero-image h1{
+    font-size: 5em;
+}
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gamerlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <% if signed_in? %>
+        Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', sign_in_path %>
+      <% end %>
+    </header>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <nav class="container">
+      <div class="sitename"><h3><a href="/">The Gamer Log</a></h3></div>
+
+      <div class="divider">|</div>
+      <div class="icon"><a href="/">Home</a></div>
+      <div class="icon"><a href="/accounts">Accounts</a></div>
+      <div class="icon"><a href="/donations">Donate</a></div>
+      <div class="icon"><a href="/your_profile">Profile</a></div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
